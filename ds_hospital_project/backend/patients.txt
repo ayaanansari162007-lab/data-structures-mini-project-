@@ -1,0 +1,3 @@
+1|Ayaan Ansari|19|Male|fever
+2|jason alphonso|19|Male|jaundice
+3|ramesh singh|19|Male|maleria

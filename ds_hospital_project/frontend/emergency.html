@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Management | CarePlus</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <aside class="sidebar">
+            <div class="logo">
+                <span class="logo-icon">✚</span>
+                <h2>CarePlus</h2>
+            </div>
+
+            <p class="menu-heading">MAIN MENU</p>
+
+            <nav>
+                <a href="index.html" class="nav-link"><span>▦</span> Dashboard</a>
+                <a href="patients.html" class="nav-link"><span>♙</span> Patients</a>
+                <a href="doctors.html" class="nav-link"><span>⚕</span> Doctors</a>
+                <a href="appointments.html" class="nav-link"><span>▣</span> Appointments</a>
+                <a href="emergency.html" class="nav-link active"><span>✚</span> Emergency</a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="admin-avatar">A</div>
+                <div>
+                    <strong>Administrator</strong>
+                    <small>Hospital Admin</small>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+
+            <header class="topbar">
+                <div>
+                    <h1>Emergency Management</h1>
+                    <p>Manage emergency cases using priority-based scheduling.</p>
+                </div>
+            </header>
+
+            <section class="stats-grid">
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span>Total Emergency Cases</span>
+                        <span class="stat-icon red">✚</span>
+                    </div>
+                    <h2 id="emergencyCount">0</h2>
+                    <p>All emergency records</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span>Active Cases</span>
+                        <span class="stat-icon blue">◷</span>
+                    </div>
+                    <h2 id="activeEmergencyCount">0</h2>
+                    <p>Awaiting treatment</p>
+                </div>
+
+            </section>
+
+            <section class="panel patient-form-panel">
+
+                <div class="panel-header">
+                    <div>
+                        <h3>Register Emergency Case</h3>
+                        <p>Register a patient and assign an urgency level.</p>
+                    </div>
+                </div>
+
+                <form id="emergencyForm">
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label for="emergencyId">Emergency Case ID</label>
+                            <input type="text" id="emergencyId" placeholder="e.g. E101" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="emergencyPatient">Patient</label>
+                            <select id="emergencyPatient" required>
+                                <option value="">Select patient</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="emergencyCondition">Condition</label>
+                            <input type="text" id="emergencyCondition" placeholder="Describe the condition" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="emergencyPriority">Urgency Level</label>
+                            <select id="emergencyPriority" required>
+                                <option value="">Select urgency</option>
+                                <option value="1">Critical</option>
+                                <option value="2">High</option>
+                                <option value="3">Medium</option>
+                                <option value="4">Low</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="primary-button">
+                            + Register Emergency
+                        </button>
+                    </div>
+
+                </form>
+
+                <p id="emergencyMessage" class="form-message" role="status"></p>
+
+            </section>
+
+            <section class="panel patient-table-panel">
+
+                <div class="panel-header">
+                    <div>
+                        <h3>Emergency Priority Queue</h3>
+                        <p>Cases are displayed by assigned urgency, highest priority first.</p>
+                    </div>
+                </div>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Case ID</th>
+                                <th>Patient</th>
+                                <th>Condition</th>
+                                <th>Urgency</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="emergencyTableBody"></tbody>
+                    </table>
+                </div>
+
+            </section>
+
+            <footer class="footer">
+                <p>CarePlus Hospital Management System</p>
+                <p>Data Structures Mini Project · C Programming</p>
+            </footer>
+
+        </main>
+
+    </div>
+
+    <script src="emergency.js"></script>
+</body>
+
+</html>

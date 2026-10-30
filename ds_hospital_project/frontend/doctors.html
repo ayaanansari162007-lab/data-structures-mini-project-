@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctors | CarePlus</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <aside class="sidebar">
+            <div class="logo">
+                <span class="logo-icon">✚</span>
+                <h2>CarePlus</h2>
+            </div>
+
+            <p class="menu-heading">MAIN MENU</p>
+
+            <nav>
+                <a href="index.html" class="nav-link"><span>▦</span> Dashboard</a>
+                <a href="patients.html" class="nav-link"><span>♙</span> Patients</a>
+                <a href="doctors.html" class="nav-link active"><span>⚕</span> Doctors</a>
+                <a href="appointments.html" class="nav-link"><span>▣</span> Appointments</a>
+                <a href="emergency.html" class="nav-link"><span>✚</span> Emergency</a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="admin-avatar">A</div>
+                <div>
+                    <strong>Administrator</strong>
+                    <small>Hospital Admin</small>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+
+            <header class="topbar">
+                <div>
+                    <h1>Doctor Management</h1>
+                    <p>Manage doctors and their specializations.</p>
+                </div>
+            </header>
+
+            <section class="stats-grid patient-stats">
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span>Total Doctors</span>
+                        <span class="stat-icon green">⚕</span>
+                    </div>
+                    <h2 id="doctorCount">0</h2>
+                    <p>Registered doctors</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span>Specializations</span>
+                        <span class="stat-icon purple">✚</span>
+                    </div>
+                    <h2 id="specializationCount">0</h2>
+                    <p>Different medical specialties</p>
+                </div>
+
+            </section>
+
+            <section class="panel patient-form-panel">
+
+                <div class="panel-header">
+                    <div>
+                        <h3 id="doctorFormTitle">Register New Doctor</h3>
+                        <p>Enter the doctor's professional information.</p>
+                    </div>
+                </div>
+
+                <form id="doctorForm">
+
+                    <input type="hidden" id="editDoctorId">
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label for="doctorId">Doctor ID</label>
+                            <input type="text" id="doctorId" placeholder="e.g. D101" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="doctorName">Full Name</label>
+                            <input type="text" id="doctorName" placeholder="Enter doctor's name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="doctorSpecialization">Specialization</label>
+                            <select id="doctorSpecialization" required>
+                                <option value="">Select specialization</option>
+                                <option>Cardiology</option>
+                                <option>Neurology</option>
+                                <option>Orthopedics</option>
+                                <option>Dermatology</option>
+                                <option>Pediatrics</option>
+                                <option>General Medicine</option>
+                                <option>Gynecology</option>
+                                <option>Ophthalmology</option>
+                                <option>ENT</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="doctorExperience">Experience (Years)</label>
+                            <input type="number" id="doctorExperience" min="0" max="70"
+                                placeholder="Years of experience" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="doctorContact">Contact Number</label>
+                            <input type="tel" id="doctorContact" pattern="[0-9]{10}" maxlength="10"
+                                placeholder="10-digit number" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="doctorEmail">Email Address</label>
+                            <input type="email" id="doctorEmail" placeholder="doctor@example.com" required>
+                        </div>
+
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="primary-button" id="submitDoctor">
+                            + Register Doctor
+                        </button>
+
+                        <button type="button" class="secondary-button" id="cancelDoctorEdit" hidden>
+                            Cancel
+                        </button>
+                    </div>
+
+                </form>
+
+            </section>
+
+            <section class="panel patient-table-panel">
+
+                <div class="panel-header">
+                    <div>
+                        <h3>All Doctors</h3>
+                        <p>View and manage registered doctors.</p>
+                    </div>
+                </div>
+
+                <div class="search-box">
+                    <input type="search" id="doctorSearch" placeholder="Search by doctor ID or name...">
+                </div>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Doctor ID</th>
+                                <th>Name</th>
+                                <th>Specialization</th>
+                                <th>Experience</th>
+                                <th>Contact</th>
+                                <th>Email</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="doctorTableBody"></tbody>
+                    </table>
+                </div>
+
+                <p id="doctorMessage" class="form-message" role="status"></p>
+
+            </section>
+
+            <footer class="footer">
+                <p>CarePlus Hospital Management System</p>
+                <p>Data Structures Mini Project · C Programming</p>
+            </footer>
+
+        </main>
+
+    </div>
+
+    <script src="doctors.js"></script>
+</body>
+
+</html>

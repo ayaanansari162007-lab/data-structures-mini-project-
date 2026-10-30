@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patients | CarePlus</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <aside class="sidebar">
+            <div class="logo">
+                <span class="logo-icon">✚</span>
+                <h2>CarePlus</h2>
+            </div>
+
+            <p class="menu-heading">MAIN MENU</p>
+
+            <nav>
+                <a href="index.html" class="nav-link"><span>▦</span> Dashboard</a>
+                <a href="patients.html" class="nav-link active"><span>♙</span> Patients</a>
+                <a href="doctors.html" class="nav-link"><span>⚕</span> Doctors</a>
+                <a href="appointments.html" class="nav-link"><span>▣</span> Appointments</a>
+                <a href="emergency.html" class="nav-link"><span>✚</span> Emergency</a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="admin-avatar">A</div>
+                <div>
+                    <strong>Administrator</strong>
+                    <small>Hospital Admin</small>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+
+            <header class="topbar">
+                <div>
+                    <h1>Patient Management</h1>
+                    <p>Register, search and manage patient records.</p>
+                </div>
+            </header>
+
+            <section class="stats-grid patient-stats">
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span>Total Patients</span>
+                        <span class="stat-icon blue">♙</span>
+                    </div>
+                    <h2 id="patientCount">0</h2>
+                    <p>Total registered records</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span>Patient Records</span>
+                        <span class="stat-icon green">✓</span>
+                    </div>
+                    <h2 id="recordCount">0</h2>
+                    <p>Records currently available</p>
+                </div>
+            </section>
+
+            <section class="panel patient-form-panel">
+                <div class="panel-header">
+                    <div>
+                        <h3 id="formTitle">Register New Patient</h3>
+                        <p>Enter the patient's information below.</p>
+                    </div>
+                </div>
+
+                <form id="patientForm">
+                    <input type="hidden" id="editPatientId">
+
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="patientId">Patient ID</label>
+                            <input type="text" id="patientId" placeholder="e.g. P101" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="patientName">Full Name</label>
+                            <input type="text" id="patientName" placeholder="Enter full name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="patientAge">Age</label>
+                            <input type="number" id="patientAge" min="0" max="120" placeholder="Enter age" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="patientGender">Gender</label>
+                            <select id="patientGender" required>
+                                <option value="">Select gender</option>
+                                <option>Male</option>
+                                <option>Female</option>
+                                <option>Other</option>
+                                <option>Prefer not to say</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="patientContact">Contact Number</label>
+                            <input type="tel" id="patientContact" pattern="[0-9]{10}" maxlength="10"
+                                placeholder="10-digit number" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="patientDisease">Medical Condition</label>
+                            <input type="text" id="patientDisease" placeholder="e.g. Fever" required>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="primary-button" id="submitPatient">
+                            + Register Patient
+                        </button>
+
+                        <button type="button" class="secondary-button" id="cancelEdit" hidden>
+                            Cancel
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="panel patient-table-panel">
+                <div class="panel-header">
+                    <div>
+                        <h3>All Patients</h3>
+                        <p>View and manage registered patients.</p>
+                    </div>
+                </div>
+
+                <div class="search-box">
+                    <input type="search" id="patientSearch" placeholder="Search by patient ID or name...">
+                </div>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Patient ID</th>
+                                <th>Name</th>
+                                <th>Age</th>
+                                <th>Gender</th>
+                                <th>Contact</th>
+                                <th>Condition</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="patientTableBody"></tbody>
+                    </table>
+                </div>
+
+                <p id="patientMessage" class="form-message" role="status"></p>
+            </section>
+
+            <footer class="footer">
+                <p>CarePlus Hospital Management System</p>
+                <p>Data Structures Mini Project · C Programming</p>
+            </footer>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="patients.js"></script>
+</body>
+
+</html>

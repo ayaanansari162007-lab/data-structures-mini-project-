@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarePlus | Hospital Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <aside class="sidebar">
+            <div class="logo">
+                <span class="logo-icon">✚</span>
+                <h2>CarePlus</h2>
+            </div>
+
+            <p class="menu-heading">MAIN MENU</p>
+
+            <nav>
+                <a href="index.html" class="nav-link active">
+                    <span>▦</span> Dashboard
+                </a>
+
+                <a href="patients.html" class="nav-link">
+                    <span>♙</span> Patients
+                </a>
+
+                <a href="doctors.html" class="nav-link">
+                    <span>⚕</span> Doctors
+                </a>
+
+                <a href="appointments.html" class="nav-link">
+                    <span>▣</span> Appointments
+                </a>
+
+                <a href="emergency.html" class="nav-link">
+                    <span>✚</span> Emergency
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="admin-avatar">A</div>
+                <div>
+                    <strong>Administrator</strong>
+                    <small>Hospital Admin</small>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+
+            <header class="topbar">
+                <div>
+                    <h1>Dashboard</h1>
+                    <p>Welcome back! Here's your hospital overview.</p>
+                </div>
+
+                <div class="topbar-right">
+                    <span class="status-dot"></span>
+                    <span>System Online</span>
+                </div>
+            </header>
+
+            <section class="welcome-banner">
+                <div>
+                    <p class="welcome-label">HOSPITAL OVERVIEW</p>
+                    <h2>Better Care, Better Lives.</h2>
+                    <p>Manage patients, doctors and appointments in one place.</p>
+                </div>
+
+                <div class="welcome-icon">✚</div>
+            </section>
+
+            <section class="stats-grid">
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span>Total Patients</span>
+                        <span class="stat-icon blue">♙</span>
+                    </div>
+                    <h2 id="totalPatients">0</h2>
+                    <p>Registered patients</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span>Total Doctors</span>
+                        <span class="stat-icon green">⚕</span>
+                    </div>
+                    <h2 id="totalDoctors">0</h2>
+                    <p>Available doctor records</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span>Appointments</span>
+                        <span class="stat-icon purple">▣</span>
+                    </div>
+                    <h2 id="totalAppointments">0</h2>
+                    <p>Scheduled appointments</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span>Emergency Cases</span>
+                        <span class="stat-icon red">✚</span>
+                    </div>
+                    <h2 id="totalEmergency">0</h2>
+                    <p>Emergency records</p>
+                </div>
+
+            </section>
+
+            <section class="content-grid">
+
+                <div class="panel recent-panel">
+                    <div class="panel-header">
+                        <div>
+                            <h3>Recent Patients</h3>
+                            <p>Recently registered patients</p>
+                        </div>
+
+                        <a href="patients.html" class="view-all">View All →</a>
+                    </div>
+
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Patient ID</th>
+                                    <th>Name</th>
+                                    <th>Age</th>
+                                    <th>Condition</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="recentPatients">
+                                <tr>
+                                    <td colspan="4" class="empty-state">
+                                        No patients registered yet.
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="panel quick-panel">
+                    <div class="panel-header">
+                        <div>
+                            <h3>Quick Actions</h3>
+                            <p>Common hospital operations</p>
+                        </div>
+                    </div>
+
+                    <a href="patients.html" class="action-button">
+                        <span class="action-icon blue">＋</span>
+                        <span>
+                            <strong>Register Patient</strong>
+                            <small>Add a new patient record</small>
+                        </span>
+                        <span class="action-arrow">→</span>
+                    </a>
+
+                    <a href="doctors.html" class="action-button">
+                        <span class="action-icon green">⚕</span>
+                        <span>
+                            <strong>Add Doctor</strong>
+                            <small>Manage doctor information</small>
+                        </span>
+                        <span class="action-arrow">→</span>
+                    </a>
+
+                    <a href="appointments.html" class="action-button">
+                        <span class="action-icon purple">▣</span>
+                        <span>
+                            <strong>New Appointment</strong>
+                            <small>Schedule a consultation</small>
+                        </span>
+                        <span class="action-arrow">→</span>
+                    </a>
+
+                    <a href="emergency.html" class="action-button">
+                        <span class="action-icon red">✚</span>
+                        <span>
+                            <strong>Emergency Queue</strong>
+                            <small>Manage urgent cases</small>
+                        </span>
+                        <span class="action-arrow">→</span>
+                    </a>
+                </div>
+
+            </section>
+
+            <footer class="footer">
+                <p>CarePlus Hospital Management System</p>
+                <p>Data Structures Mini Project · C Programming</p>
+            </footer>
+
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

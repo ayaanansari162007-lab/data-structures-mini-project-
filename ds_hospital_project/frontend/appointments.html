@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointments | CarePlus</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <aside class="sidebar">
+            <div class="logo">
+                <span class="logo-icon">✚</span>
+                <h2>CarePlus</h2>
+            </div>
+
+            <p class="menu-heading">MAIN MENU</p>
+
+            <nav>
+                <a href="index.html" class="nav-link"><span>▦</span> Dashboard</a>
+                <a href="patients.html" class="nav-link"><span>♙</span> Patients</a>
+                <a href="doctors.html" class="nav-link"><span>⚕</span> Doctors</a>
+                <a href="appointments.html" class="nav-link active"><span>▣</span> Appointments</a>
+                <a href="emergency.html" class="nav-link"><span>✚</span> Emergency</a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="admin-avatar">A</div>
+                <div>
+                    <strong>Administrator</strong>
+                    <small>Hospital Admin</small>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+
+            <header class="topbar">
+                <div>
+                    <h1>Appointment Management</h1>
+                    <p>Schedule consultations and manage the waiting queue.</p>
+                </div>
+            </header>
+
+            <section class="stats-grid">
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span>Total Appointments</span>
+                        <span class="stat-icon blue">▣</span>
+                    </div>
+                    <h2 id="appointmentCount">0</h2>
+                    <p>All appointment records</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span>Waiting Patients</span>
+                        <span class="stat-icon purple">◷</span>
+                    </div>
+                    <h2 id="waitingCount">0</h2>
+                    <p>Awaiting consultation</p>
+                </div>
+
+            </section>
+
+            <section class="panel patient-form-panel">
+
+                <div class="panel-header">
+                    <div>
+                        <h3>Schedule Appointment</h3>
+                        <p>Select a registered patient and doctor.</p>
+                    </div>
+                </div>
+
+                <form id="appointmentForm">
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label for="appointmentId">Appointment ID</label>
+                            <input type="number" id="appointmentId" placeholder="e.g. 101" min="1" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="appointmentPatient">Patient</label>
+                            <select id="appointmentPatient" required>
+                                <option value="">Select patient</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="appointmentDoctor">Doctor</label>
+                            <select id="appointmentDoctor" required>
+                                <option value="">Select doctor</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="appointmentDate">Appointment Date</label>
+                            <input type="date" id="appointmentDate" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="appointmentTime">Appointment Time</label>
+                            <input type="time" id="appointmentTime" required>
+                        </div>
+
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="primary-button">
+                            + Schedule Appointment
+                        </button>
+                    </div>
+
+                </form>
+
+                <p id="appointmentMessage" class="form-message" role="status"></p>
+
+            </section>
+
+            <section class="panel patient-table-panel">
+
+                <div class="panel-header">
+                    <div>
+                        <h3>Appointment Queue</h3>
+                        <p>Patients waiting for their consultations.</p>
+                    </div>
+                </div>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Appointment ID</th>
+                                <th>Patient</th>
+                                <th>Doctor</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="appointmentTableBody"></tbody>
+                    </table>
+                </div>
+
+            </section>
+
+            <footer class="footer">
+                <p>CarePlus Hospital Management System</p>
+                <p>Data Structures Mini Project · C Programming</p>
+            </footer>
+
+        </main>
+
+    </div>
+
+    <script src="appointments.js"></script>
+</body>
+
+</html>
